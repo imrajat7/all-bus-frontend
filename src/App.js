@@ -1,15 +1,14 @@
 import React from 'react';
-import {BrowserRouter,Route} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 import Navbar from './components/Navbar';
-
+import Search from './components/Search';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar/>
-        <Route />
-
+        <Search/>
       </div>
     </BrowserRouter>
   );
