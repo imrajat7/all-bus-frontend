@@ -17,7 +17,7 @@ class Navbar extends Component{
                             <a href="/#" className="nav-link">Users</a>
                         </li>
                         <li className="nav-item">
-                            <a href="/#" className="nav-link">Products</a>
+                            <a href="/#" className="nav-link">Profile</a>
                         </li>
                     </ul>
                 </div>

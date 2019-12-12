@@ -1,5 +1,4 @@
 .navbar{
-    position: absolute;
     width: 100%;
 }
 .div-bg{
@@ -29,5 +28,5 @@
 }
 
 .container{
-    text-align: end;
+    /* text-align: end; */
 }

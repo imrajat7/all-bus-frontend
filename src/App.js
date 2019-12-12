@@ -1,14 +1,18 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import Navbar from './components/Navbar';
-import Search from './components/Search';
+import Home from './components/Home';
+import Result from './components/Result';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Navbar/>
-        <Search/>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/result' component={Result}/>
+        </Switch>
       </div>
     </BrowserRouter>
   );
