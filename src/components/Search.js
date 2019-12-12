@@ -59,25 +59,24 @@ class Search extends Component{
             return <Redirect to={{pathname:'/result', state:{
                 source: this.state.source,
                 destination: this.state.destination,
-                date:this.state.date}}}/>
+                date:this.state.date,
+                picker:this.state.picker}}}/>
         }
         else{
             return(
-                <div className="container-fluid div-bg">
-                    <div className="container text-center div-inner-bg">
-                        <form className="form-inline custom" onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                            <input type="text" name="source" onChange={this.handleChange} className="form-control"  placeholder="Source"/>
-                            </div>
-                            <div className="form-group">
-                            <input type="text" name="destination" onChange={this.handleChange} className="form-control" placeholder="Destination"/>
-                            </div>
-                            <div className="form-group">
-                                <DatePicker selected={this.state.picker} onSelect={this.handleDateChange} onChange={this.handleDateChange} className="form-control" placeholderText="Pick date"/>
-                            </div>
-                            <button type="submit" className="form-control btn btn-default">Fetch</button>
-                        </form>
-                    </div>
+                <div className="container text-center div-inner-bg">
+                    <form className="form-inline custom" onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                        <input type="text" name="source" onChange={this.handleChange} className="form-control"  placeholder="Source"/>
+                        </div>
+                        <div className="form-group">
+                        <input type="text" name="destination" onChange={this.handleChange} className="form-control" placeholder="Destination"/>
+                        </div>
+                        <div className="form-group">
+                            <DatePicker selected={this.state.picker} onSelect={this.handleDateChange} onChange={this.handleDateChange} className="form-control" placeholderText="Pick date"/>
+                        </div>
+                        <button type="submit" className="form-control btn btn-default">Fetch</button>
+                    </form>
                 </div>
             )
         }

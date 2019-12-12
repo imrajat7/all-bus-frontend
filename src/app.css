@@ -3,7 +3,7 @@
 }
 .div-bg{
     box-sizing: border-box;
-    padding: 200px;
+    padding: 150px;
     background-image: url(./assets/back.png);
     background-origin: border-box;
     background-position: center;
@@ -13,6 +13,7 @@
 .div-inner-bg{
     box-sizing: border-box;
     text-align: center;
+    transform: translateX(+5%);
 }
 
 .form-group{
