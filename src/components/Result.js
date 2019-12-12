@@ -12,6 +12,20 @@ const containerStyle = {
     marginTop: '3%'
 }
 
+const cardStyle ={
+    border: '1px solid rgba(220,220,220)',
+    margin: '5px',
+    color: 'rgba(70,70,70)'
+}
+
+const cardBodyStyle = {
+}
+
+const cardTitleStyle = {
+    fontSize: "25px",
+    fontWeight: "400"
+}
+
 class Result extends Component{
     constructor(props){
         super(props);
@@ -92,9 +106,17 @@ class Result extends Component{
             const busList = buses.length ? (
                 buses.map(bus=>{
                     return(
-                        <div className="card" style={{margin:"5px"}} key={bus._id}>
+                        <div className="card" style={cardStyle} key={bus._id}>
                             <div className="card-body">
-                                <span className="card-title">{bus.name}</span>
+                                <span className="card-title" style={cardTitleStyle}>{bus.name}</span>
+                                &nbsp; &nbsp;
+                                <span>{bus.departure}</span>
+                                <span> to </span>
+                                <span>{bus.arrival}</span>
+                                <br></br>
+                                <span> {bus.source}</span>
+                                <span> to </span>
+                                <span>{bus.destination}</span>
                             </div>
                         </div>
                     )
