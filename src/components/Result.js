@@ -3,6 +3,8 @@ import axios from 'axios';
 import bus from '../assets/bus.gif'
 import no_bus_found from '../assets/no_bus.png'
 import DatePicker from "react-datepicker";
+import {Button, ButtonToolbar} from 'react-bootstrap';
+import BookingModal from '../components/BookingModal'
 
 const containerStyle = {
     display:'flex',
@@ -12,30 +14,40 @@ const containerStyle = {
     marginTop: '3%'
 }
 
-const cardStyle ={
+const cardStyle = {
     border: '1px solid rgba(220,220,220)',
-    margin: '5px',
-    color: 'rgba(70,70,70)'
+    margin: '8px',
+    borderRadius: "0px",
+    color: 'rgba(70,70,70)',
+    backgroundColor: 'rgba(250,250,250)'
 }
 
 const cardBodyStyle = {
+    fontSize: "20px",
+    fontWeight: "400"
+}
+
+const buttonStyle = {
+    float: 'right'
 }
 
 const cardTitleStyle = {
     fontSize: "25px",
-    fontWeight: "400"
+    fontWeight: "550"
 }
 
 class Result extends Component{
+
     constructor(props){
         super(props);
-        this.state ={
-            source: this.props.location.state.source,
-            destination: this.props.location.state.destination,
-            date: this.props.location.state.date,
-            picker: this.props.location.state.picker,
+        this.state = {
+            source: (this.props.location.state!==undefined)?(this.props.location.state.source):(""),
+            destination: (this.props.location.state!==undefined)?(this.props.location.state.destination):(""),
+            date: (this.props.location.state!==undefined)?(this.props.location.state.date):(""),
+            picker: (this.props.location.state!==undefined)?(this.props.location.state.picker):(Date.now()),
             buses: [],
-            found: false
+            found: false,
+            bookingModalShow: false
         }
     }
 
@@ -72,6 +84,19 @@ class Result extends Component{
         }
     }
 
+    bookingModalClose = ()=>{
+        this.setState({
+            bookingModalShow: false
+        })
+    }
+
+    handleBook = (id)=>{
+        this.setState({
+            bookingModalShow: true
+        })
+        alert(id);
+    }
+
     handleModify = (e)=>{
         e.preventDefault();
         this.setState({
@@ -86,10 +111,12 @@ class Result extends Component{
                 buses: res.data.buses,
                 found:true
             })
+            console.log(this.state)
         })
     }
 
     render(){
+        
         if(!this.state.found){
             return (
                 <div className="conatiner" style={containerStyle}>
@@ -100,16 +127,16 @@ class Result extends Component{
         }
         else{
             const {buses} = this.state;
-            if(buses.length){
-                
-            }
             const busList = buses.length ? (
                 buses.map(bus=>{
                     return(
                         <div className="card" style={cardStyle} key={bus._id}>
-                            <div className="card-body">
+                            <div className="card-body" style={cardBodyStyle}>
                                 <span className="card-title" style={cardTitleStyle}>{bus.name}</span>
+                                <button key={bus._id} className="btn btn-primary" onClick={()=>{this.handleBook(bus._id)}} style={buttonStyle}>Book</button>
+                                <BookingModal show={this.state.bookingModalShow} onHide={this.bookingModalClose} />
                                 &nbsp; &nbsp;
+                                <br></br>
                                 <span>{bus.departure}</span>
                                 <span> to </span>
                                 <span>{bus.arrival}</span>
@@ -117,6 +144,8 @@ class Result extends Component{
                                 <span> {bus.source}</span>
                                 <span> to </span>
                                 <span>{bus.destination}</span>
+                                <br></br>
+                                <span style={{fontWeight:"500",fontSize:"22px"}}>₹{bus.price}</span>
                             </div>
                         </div>
                     )

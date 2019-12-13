@@ -48,10 +48,14 @@ class Search extends Component{
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        this.setState({
-            redirect: true
-        })
-        console.log(this.state);
+        if(this.state.source===""||this.state.destination===""){
+            alert('Source or Destination cannot be empty!')
+        }else{
+            this.setState({
+                redirect: true
+            })
+            console.log(this.state);
+        }
     }
 
     render(){

@@ -6,7 +6,7 @@ class Navbar extends Component{
     render(){
         return(
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-                <Link href="/" className="navbar-brand">
+                <Link to="/" className="navbar-brand">
                     <img src={logo} alt="all-bus-logo" height="40" width="100" style={{marginLeft: "20px"}}/>
                 </Link>
                 <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
@@ -21,7 +21,7 @@ class Navbar extends Component{
                             <a href="/#" className="nav-link">Users</a>
                         </li>
                         <li className="nav-item">
-                            <a href="/#" className="nav-link">Profile</a>
+                            <Link href="/login" className="nav-link">Login</Link>
                         </li>
                     </ul>
                 </div>

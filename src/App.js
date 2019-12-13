@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -12,6 +12,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path='/result' component={Result}/>
+          {/* <Route path='/login' component={Login}/> */}
         </Switch>
       </div>
     </BrowserRouter>
