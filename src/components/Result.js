@@ -53,7 +53,7 @@ class Result extends Component{
     }
 
     componentDidMount(){
-        axios.post('http://all-bus.herokuapp.com/search/',{
+        axios.post('https://all-bus.herokuapp.com/search/',{
             source: this.state.source,
             destination: this.state.destination,
             date: this.state.date
@@ -105,7 +105,7 @@ class Result extends Component{
         this.setState({
             found: false
         })
-        axios.post('http://all-bus.herokuapp.com/search/',{
+        axios.post('https://all-bus.herokuapp.com/search/',{
             source: this.state.source,
             destination: this.state.destination,
             date: this.state.date

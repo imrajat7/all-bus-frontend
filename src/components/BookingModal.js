@@ -47,7 +47,7 @@ class BookingModal extends Component {
         if(err.length===0){
             console.log('everything ok');
             console.log(this.state);
-            axios.post('http://all-bus.herokuapp.com/booking/',{
+            axios.post('https://all-bus.herokuapp.com/booking/',{
                 busId: this.state.bookedId,
                 userId: this.state.uniqueId,
                 name: this.state.name,
