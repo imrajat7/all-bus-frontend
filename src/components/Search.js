@@ -48,14 +48,10 @@ class Search extends Component{
 
     handleSubmit = (e)=>{
         e.preventDefault();
-        if(this.state.source===""||this.state.destination===""){
-            alert('Source or Destination cannot be empty!')
-        }else{
-            this.setState({
-                redirect: true
-            })
-            console.log(this.state);
-        }
+        this.setState({
+            redirect: true
+        })
+        console.log(this.state);
     }
 
     render(){
@@ -71,10 +67,10 @@ class Search extends Component{
                 <div className="container text-center div-inner-bg">
                     <form className="form-inline custom" onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                        <input type="text" name="source" onChange={this.handleChange} className="form-control"  placeholder="Source"/>
+                            <input type="text" name="source" onChange={this.handleChange} className="form-control"  placeholder="Source" required/>
                         </div>
                         <div className="form-group">
-                        <input type="text" name="destination" onChange={this.handleChange} className="form-control" placeholder="Destination"/>
+                            <input type="text" name="destination" onChange={this.handleChange} className="form-control" placeholder="Destination" required/>
                         </div>
                         <div className="form-group">
                             <DatePicker selected={this.state.picker} onSelect={this.handleDateChange} onChange={this.handleDateChange} className="form-control" placeholderText="Pick date"/>

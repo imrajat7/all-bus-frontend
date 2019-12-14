@@ -3,7 +3,6 @@ import axios from 'axios';
 import bus from '../assets/bus.gif'
 import no_bus_found from '../assets/no_bus.png'
 import DatePicker from "react-datepicker";
-import {Button, ButtonToolbar} from 'react-bootstrap';
 import BookingModal from '../components/BookingModal'
 
 const containerStyle = {
@@ -47,7 +46,9 @@ class Result extends Component{
             picker: (this.props.location.state!==undefined)?(this.props.location.state.picker):(Date.now()),
             buses: [],
             found: false,
-            bookingModalShow: false
+            bookingModalShow: false,
+            bookedid: "",
+            bookedbus: ""
         }
     }
 
@@ -90,9 +91,11 @@ class Result extends Component{
         })
     }
 
-    handleBook = (id)=>{
+    handleBook = (id,name)=>{
         this.setState({
-            bookingModalShow: true
+            bookingModalShow: true,
+            bookedid: id,
+            bookedbus: name
         })
         alert(id);
     }
@@ -133,8 +136,7 @@ class Result extends Component{
                         <div className="card" style={cardStyle} key={bus._id}>
                             <div className="card-body" style={cardBodyStyle}>
                                 <span className="card-title" style={cardTitleStyle}>{bus.name}</span>
-                                <button key={bus._id} className="btn btn-primary" onClick={()=>{this.handleBook(bus._id)}} style={buttonStyle}>Book</button>
-                                <BookingModal show={this.state.bookingModalShow} onHide={this.bookingModalClose} />
+                                <button key={bus._id} className="btn btn-primary" onClick={()=>{this.handleBook(bus._id,bus.name)}} style={buttonStyle}>Book</button>
                                 &nbsp; &nbsp;
                                 <br></br>
                                 <span>{bus.departure}</span>
@@ -175,6 +177,7 @@ class Result extends Component{
                 <div className="container">
                     {busList}
                 </div>
+                {this.state.bookingModalShow &&( <BookingModal show={this.state.bookingModalShow} onHide={this.bookingModalClose} bookedid={this.state.bookedid} bookedbus={this.state.bookedbus}/>)}
                 <p className="text-center">{this.state.buses.length} buses found</p>
             </div>
         )
