@@ -64,20 +64,18 @@ class Search extends Component{
         }
         else{
             return(
-                <div className="container text-center div-inner-bg">
-                    <form className="form-inline custom" onSubmit={this.handleSubmit}>
-                        <div className="form-group">
-                            <input type="text" name="source" onChange={this.handleChange} className="form-control"  placeholder="Source" required/>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" name="destination" onChange={this.handleChange} className="form-control" placeholder="Destination" required/>
-                        </div>
-                        <div className="form-group">
-                            <DatePicker selected={this.state.picker} onSelect={this.handleDateChange} onChange={this.handleDateChange} className="form-control" placeholderText="Pick date"/>
-                        </div>
-                        <button type="submit" className="form-control btn btn-default">Fetch</button>
-                    </form>
-                </div>
+                <form className="form-inline form-outer" onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <input type="text" name="source" onChange={this.handleChange} className="form-control"  placeholder="Source" required/>
+                    </div>
+                    <div className="form-group">
+                        <input type="text" name="destination" onChange={this.handleChange} className="form-control" placeholder="Destination" required/>
+                    </div>
+                    <div className="form-group">
+                        <DatePicker selected={this.state.picker} onSelect={this.handleDateChange} onChange={this.handleDateChange} className="form-control" placeholderText="Pick date"/>
+                    </div>
+                    <button type="submit" className="form-control btn btn-default">Fetch</button>
+                </form>
             )
         }
     }

@@ -5,7 +5,7 @@ import Search from '../components/Search';
 class Home extends Component{
     render(){
         return(
-            <div className="div-bg container-fluid">
+            <div className="div-bg">
                 <Search/>
             </div>
         )
