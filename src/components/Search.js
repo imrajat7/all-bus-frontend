@@ -74,7 +74,7 @@ class Search extends Component{
                     <div className="form-group">
                         <DatePicker selected={this.state.picker} onSelect={this.handleDateChange} onChange={this.handleDateChange} className="form-control" placeholderText="Pick date"/>
                     </div>
-                    <button type="submit" className="form-control btn btn-default">Fetch</button>
+                    <button type="submit" id="submit-button" className="form-control btn btn-default ">Fetch</button>
                 </form>
             )
         }
