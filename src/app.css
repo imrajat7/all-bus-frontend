@@ -43,6 +43,7 @@ body{
     border: 1px solid black;
 }
 
+/* Result Component */
 
 .card{
     transition-duration: 0.7s;
@@ -69,4 +70,6 @@ body{
       flex-direction: column;
       align-items: stretch;
     }
-  }
+}
+
+/* Login Component */
