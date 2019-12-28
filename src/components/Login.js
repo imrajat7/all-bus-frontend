@@ -1,29 +1,60 @@
 import React,{Component} from 'react';
+import Axios from 'axios';
 
 class Login extends Component{
     constructor(props){
         super(props);
         this.state = {
-
+            email: "",
+            password: "",
+            token: ""
         }
     }
+
+    handleChange = (e)=>{
+        let data = e.target.value.toString();
+        this.setState({
+            [e.target.name]: data
+        })
+    }
+
+    handleSubmit = (e)=>{
+        e.preventDefault();
+        Axios.post("https://all-bus.herokuapp.com/user/login",{
+            email: this.state.email,
+            password: this.state.password
+        }).then(res=>{
+            this.setState({
+                token: res.data.token
+            })
+            console.log(res.data);
+        }).catch(err=>{
+            alert('User not found!!!');
+            this.setState({
+                email: "",
+                password: "",
+                token: ""
+            })
+        })
+    }
+
     render(){
         return(
             <div className="container-fluid login-background-div wrapper">
                 <div className="col-lg-4 col-sm-8 col-md-6 mx-auto card p-4 login-form-outer-div">
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
-                            <label for="username"><b>Username</b></label>
-                            <input type="text" className="form-control" placeholder="Enter Username"/>
+                            <label htmlFor="email"><b>Email</b></label>
+                            <input type="text" name="email" className="form-control" onChange={this.handleChange} placeholder="Enter Email" required/>
                             <small className="form-text text-muted">We will never share your email with anyone else.</small>
                         </div>
                         <div className="form-group">
-                            <label for="password"><b>Password</b></label>
-                            <input type="password" className="form-control" placeholder="Enter Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                            <label htmlFor="password"><b>Password</b></label>
+                            <input type="password" name="password" className="form-control" onChange={this.handleChange} placeholder="Enter Password" required/>
                         </div>
                         
                         <div className="wrapper">
-                            <button className="btn btn-success">Login</button>
+                            <button type="submit" className="btn btn-success">Login</button>
                         </div>
                     </form>
                 </div>
