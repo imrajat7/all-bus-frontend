@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Result from './components/Result';
 import Login from './components/Login';
+import Dashboard from './components/Dashboard'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path='/' component={Home}/>
           <Route path='/result' component={Result}/>
           <Route path='/login' component={Login}/>
+          <Route path='/dashboard' component={Dashboard}/>
         </Switch>
       </div>
     </BrowserRouter>
