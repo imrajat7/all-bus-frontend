@@ -42,7 +42,6 @@ class Login extends Component{
     render(){
         if(this.state.redirect){
             return <Redirect to={{pathname:'/dashboard',state:{
-                email: this.state.email,
                 token: this.state.token
             }}}/>
         }else{
