@@ -46,17 +46,16 @@ body{
 
 /* Result Component */
 
-.card{
+.card-one{
     border: 0.5px rgba(120,120,120) solid;
     transition-duration: 0.7s;
 }
 
-.card:hover{
+.card-one:hover{
     border: 0.5px #428939 solid;
     box-shadow: 0px 0px 10px 1px rgba(80, 80, 80);
     transition-duration: 0.7s;
 }
-
 
 @media (max-width: 800px) {
     .form-inline input{

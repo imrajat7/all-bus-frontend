@@ -133,7 +133,7 @@ class Result extends Component{
             const busList = buses.length ? (
                 buses.map(bus=>{
                     return(
-                        <div className="card" style={cardStyle} key={bus._id}>
+                        <div className="card card-one" style={cardStyle} key={bus._id}>
                             <div className="card-body" style={cardBodyStyle}>
                                 <span className="card-title" style={cardTitleStyle}>{bus.name}</span>
                                 <button key={bus._id} className="btn btn-primary" onClick={()=>{this.handleBook(bus._id,bus.name)}} style={buttonStyle}>Book</button>
