@@ -9,15 +9,15 @@ import Dashboard from './components/Dashboard'
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Navbar/>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/result' component={Result}/>
-          <Route path='/login' component={Login}/>
-          <Route path='/dashboard' component={Dashboard}/>
-        </Switch>
-      </div>
+        <div className="App">
+          <Navbar/>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/result' component={Result}/>
+            <Route path='/login' component={Login}/>
+            <Route path='/dashboard' component={Dashboard}/>
+          </Switch>
+        </div>
     </BrowserRouter>
   );
 }

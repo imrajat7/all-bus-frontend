@@ -20,6 +20,12 @@ class Login extends Component{
         })
     }
 
+    componentDidMount(){
+        if(localStorage.getItem('token')){
+            window.location='/dashboard'
+        }   
+    }
+
     handleSubmit = (e)=>{
         e.preventDefault();
         Axios.post("https://all-bus.herokuapp.com/user/login",{
@@ -41,9 +47,7 @@ class Login extends Component{
 
     render(){
         if(this.state.redirect){
-            return <Redirect to={{pathname:'/dashboard',state:{
-                token: this.state.token
-            }}}/>
+            return <Redirect to={{pathname:'/dashboard'}}/>
         }else{
             return(
                 <div className="container-fluid login-background-div wrapper">
