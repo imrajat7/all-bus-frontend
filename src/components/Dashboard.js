@@ -1,19 +1,23 @@
-import React,{Component} from 'react';
+import React from 'react';
 import {Redirect} from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 
-class Dashboard extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            token: localStorage.getItem('token'),
-        }
-    }
+function Dashboard(){
 
-    render(){
+    const isAuthenticated = useSelector(state=> state.token);
+
+
+    if(!isAuthenticated){
+        return(
+                <Redirect to="/login" />
+        )
+    }else{
         return(
             <div>
-
+                <h2>
+                    Hello
+                </h2>
             </div>
         )
     }
