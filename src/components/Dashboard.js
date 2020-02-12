@@ -15,7 +15,7 @@ function Dashboard(){
     }else{
         return(
             <div>
-                <AddBus />
+                I m Dashboard
             </div>
         )
     }

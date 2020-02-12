@@ -32,7 +32,7 @@ function Navbar(){
                             <Link to="/dashboard" className="nav-link">Dashboard</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/#" className="nav-link">Add Buses</Link>
+                            <Link to="/addbus" className="nav-link">Add Buses</Link>
                         </li>
                         <li className="nav-item">
                             <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
