@@ -38,7 +38,7 @@ function Login(){
             }
         }).catch(err=>{
             setLoading(false)
-            alert('User not found!!!');
+            alert(err);
         })
     }
 

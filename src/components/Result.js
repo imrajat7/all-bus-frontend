@@ -105,6 +105,7 @@ class Result extends Component{
         this.setState({
             found: false
         })
+        
         axios.post('https://all-bus.herokuapp.com/search/',{
             source: this.state.source,
             destination: this.state.destination,

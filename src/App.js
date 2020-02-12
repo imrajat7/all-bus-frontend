@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Result from './components/Result';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard'
+import AddBus from './components/AddBus/AddBus';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/result' component={Result}/>
             <Route path='/login' component={Login}/>
             <Route path='/dashboard' component={Dashboard}/>
+            <Route path='/addbus' component={AddBus}/>
           </Switch>
         </div>
     </BrowserRouter>

@@ -8,7 +8,7 @@ function Navbar(){
 
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state=>state.token);
-
+    
     const handleLogout = (e)=>{
         localStorage.removeItem('token');
         dispatch(logOut());
