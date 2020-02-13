@@ -1,0 +1,20 @@
+.header-outer-div{
+    padding: 10;
+}
+
+input{
+    margin-bottom: 20px;
+}
+
+.pnr-outer-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    height: 100%;
+}
+
+.pnr-inner-div{
+    background: #ededed;
+    padding: 30px;
+}

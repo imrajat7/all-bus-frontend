@@ -1,18 +1,17 @@
 import React,{useState} from 'react';
 import {useSelector} from 'react-redux';
-import jwt from 'jsonwebtoken';
+// import jwt from 'jsonwebtoken';
 import './AddBus.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Axios from 'axios';
-import {store} from '../../index';
 import { Redirect } from 'react-router-dom';
 
 function AddBus(){
 
     const token = useSelector(state=>state.token);
 
-    const decoded = jwt.decode(token);
+    // const decoded = jwt.decode(token);
     // console.log(decoded);
 
     const [name, setname] = useState("");
@@ -73,8 +72,8 @@ function AddBus(){
         Axios.post('https://all-bus.herokuapp.com/bus/',{
             name: name,
             drivernum: drivernum,
-            source: source,
-            destination: destination,
+            source: source.toLowerCase(),
+            destination: destination.toLowerCase(),
             date: date,
             seats: seats,
             price: price,
@@ -161,7 +160,7 @@ function AddBus(){
             </div>
         )
     }else{
-        return <Redirect to="/"/>
+        return <Redirect to="/login"/>
     }
 }
 
