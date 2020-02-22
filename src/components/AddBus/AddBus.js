@@ -1,15 +1,18 @@
 import React,{useState} from 'react';
-import {useSelector} from 'react-redux';
+import {useSelector,useDispatch} from 'react-redux';
 // import jwt from 'jsonwebtoken';
 import './AddBus.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import { LOG_OUT } from '../../redux/actions/actions';
 
 function AddBus(){
 
     const token = useSelector(state=>state.token);
+    const dispatch = useDispatch();
+
 
     // const decoded = jwt.decode(token);
     // console.log(decoded);
@@ -87,6 +90,8 @@ function AddBus(){
             window.location= '/addbus';
         })
         .catch(err=>{
+            alert('Your token is expired or Auth unsuccessful so Login again')
+            dispatch(LOG_OUT);
             console.log(err);
         })
 
