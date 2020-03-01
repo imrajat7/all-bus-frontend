@@ -62,7 +62,9 @@ function Navbar(){
                         <li className="nav-item">
                             <Link to="/checkpnrstatus" className="nav-link">PNR Status</Link>
                         </li>
-                        
+                        <li className="nav-item">
+                            <Link to="/contactus" className="nav-link">Contact Us</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

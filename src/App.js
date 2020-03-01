@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import AddBus from './components/AddBus/AddBus';
 import TicketBooked from './components/TicketBooked';
 import CheckPnrStatus from './components/Pnr/Pnr';
+import ContactUs from './components/ContactUs/ContactUs'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path='/addbus' component={AddBus}/>
             <Route path='/ticketBooked' component={TicketBooked} />
             <Route path='/checkpnrstatus' component={CheckPnrStatus}/>
+            <Route path='/contactus' component={ContactUs}/>
           </Switch>
         </div>
     </BrowserRouter>

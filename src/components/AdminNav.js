@@ -7,6 +7,7 @@ class AdminNav extends Component{
     handleClick= (e)=>{
         localStorage.setItem('token','null');
     }
+    
     render(){
         return(
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">

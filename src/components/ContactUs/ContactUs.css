@@ -1,0 +1,24 @@
+.contact-outer-div{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; */
+    margin-top: 5%;
+    overflow-x: hidden;
+}
+
+.contact-image{
+    width: 500px;
+    height: auto;
+    display: block;
+}
+
+.contact-inner-div{
+    text-align: center;
+    border: 1px solid rgb(200,200, 200);
+    display: block;
+    padding: 10px;
+    background:rgb(230, 230, 230);
+    margin: 10px;
+    border-radius: 20px;
+}
