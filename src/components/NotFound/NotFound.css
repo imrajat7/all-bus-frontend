@@ -1,0 +1,21 @@
+.not-found-outer-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    flex-direction: column;
+}
+
+.not-found-image-outer-div{
+    transition-duration: 1000ms;
+}
+
+.not-found-image-outer-div:hover{
+    transform: rotate(360deg);
+    transition-duration: 1000ms;
+}
+
+.not-found-image{
+    width: 400px;
+    height:auto;
+}

@@ -68,9 +68,14 @@ function Login(){
                             <label htmlFor="password"><b>Password</b></label>
                             <input type="password" name="password" className="form-control" onChange={handleChange} placeholder="Enter Password" required/>
                         </div>
-                        
-                        <div className="wrapper">
-                            <button type="submit" className="btn btn-success">Login</button>
+
+                        <div className="row" style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                            <div className="wrapper" style={{marginRight: '6px'}}>
+                                <button type="submit" className="btn btn-success">Login</button>
+                            </div>
+                            <div className="wrapper">
+                                <button type="SignUp" className="btn btn-primary">SignUp</button>
+                            </div>
                         </div>
                     </form>
                 </div>

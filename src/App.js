@@ -9,6 +9,7 @@ import AddBus from './components/AddBus/AddBus';
 import TicketBooked from './components/TicketBooked';
 import CheckPnrStatus from './components/Pnr/Pnr';
 import ContactUs from './components/ContactUs/ContactUs'
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/ticketBooked' component={TicketBooked} />
             <Route path='/checkpnrstatus' component={CheckPnrStatus}/>
             <Route path='/contactus' component={ContactUs}/>
+            <Route component={NotFound} />
           </Switch>
         </div>
     </BrowserRouter>
