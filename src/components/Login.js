@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Axios from 'axios';
 import {useSelector , useDispatch} from 'react-redux';
 import {signIn} from '../redux/actions/actions'
-import { Redirect } from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 // import login_loading from '../assets/login_loading.gif'
 
 function Login(){
@@ -42,7 +42,6 @@ function Login(){
         })
     }
 
-
     if(isAuthenticated){
         return <Redirect to='/dashboard'/>
     }
@@ -73,11 +72,13 @@ function Login(){
                             <div className="wrapper" style={{marginRight: '6px'}}>
                                 <button type="submit" className="btn btn-success">Login</button>
                             </div>
-                            <div className="wrapper">
-                                <button type="SignUp" className="btn btn-primary">SignUp</button>
-                            </div>
                         </div>
                     </form>
+                    <div className="wrapper" style={{marginTop: '10px'}}>
+                        <Link to='/signup'>
+                            <button className="btn btn-primary">SignUp</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         )

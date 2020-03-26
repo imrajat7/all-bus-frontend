@@ -58,8 +58,8 @@ class BookingModal extends Component {
             }).then(result=>{
                 if(result.data.message==="Booking Done"){
                     this.props.onHide()
+
                     alert('Booking Successful');
-                    
                 }else{
                     this.props.onHide()
                     alert('Booking Failed!!!');

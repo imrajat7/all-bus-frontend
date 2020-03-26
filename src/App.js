@@ -10,6 +10,7 @@ import TicketBooked from './components/TicketBooked';
 import CheckPnrStatus from './components/Pnr/Pnr';
 import ContactUs from './components/ContactUs/ContactUs'
 import NotFound from './components/NotFound/NotFound'
+import SignUp from '../src/components/SignUp/SignUp';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/ticketBooked' component={TicketBooked} />
             <Route path='/checkpnrstatus' component={CheckPnrStatus}/>
             <Route path='/contactus' component={ContactUs}/>
+            <Route path='/signup' component={SignUp}/>
             <Route component={NotFound} />
           </Switch>
         </div>
